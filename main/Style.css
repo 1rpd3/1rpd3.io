@@ -1,0 +1,787 @@
+@import url("fonts/stylesheet.css");
+
+/* Обнуление отступов и полей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Устанавливаем шрифт для всего текста на странице, используя 'Magistral-Bold' */
+body {
+    font-family: 'Magistral Bold';
+}
+
+/* Стили для блока заголовка блога */
+.header {
+    padding: 30px 0px;
+    width: 100%;
+    height: 55vh;
+    position: relative;
+    background-image: url('img/Header.png');
+    background-size: cover;
+    background-position: center;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+/* Стили для заголовка страницы */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+/* Стили для заголовка внутри блока header */
+header h2 {
+    font-size: 2.5vh;
+    color: #ffffff;
+    margin-right: 20px;
+}
+li {
+    font-size: 10px;
+    color: #000000;
+}
+
+/* Установим базовый стиль для списка */
+.catalog-menu {
+    display: none; /* Скрываем меню по умолчанию */
+    position: absolute; /* Позиционируем абсолютно относительно родительского элемента */
+    z-index: 999; /* Устанавливаем передний план */
+    background-color: white; /* Белый фон */
+    border-radius: 10px; /* Скругляем углы */
+    padding: 10px; /* Добавляем отступы */
+    width: 350px; /* Ширина меню */
+    left: calc(40% - 130px); /* Положение по центру относительно родителя */
+    top: calc(20% + 5px); /* Отступ сверху */
+}
+
+.catalog-menu img{
+    width: 6vh;
+    height: 6vh;
+}
+
+/* Установим стиль для пунктов меню */
+.catalog-menu li {
+    display: flex; /* Располагаем элементы в строку */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    padding: 10px 0; /* Добавляем внутренний отступ сверху и снизу */
+}
+
+/* Уменьшим размер текста в пунктах меню */
+.catalog-menu li h3 {
+    font-size: 16px;
+}
+.catalog-menu li h5 {
+    font-size: 10px;
+    color: #949494;
+}
+.catalog-menu li h3 {
+    color: #333;
+}
+/* Установим стиль для изображений в пунктах меню */
+.catalog-menu li img {
+    margin-right: 10px; /* Отступ справа от изображения */
+}
+
+.contacts-h1,
+.reviews-h1,
+.AboutCompany-h1,
+.catalog-h1 {
+    font-family: 'Magistral Light'; 
+}
+
+/* Установим стиль для заголовка "Каталог" */
+.catalog-h1 {
+    font-family: 'Magistral Light';
+    color: #ffffff; /* Белый цвет текста по умолчанию */
+    cursor: pointer;
+    padding: 10px 20px; /* Добавляем отступы для улучшения визуального восприятия */
+    position: relative; /* Установим относительное позиционирование */
+    z-index: 1000; /* Устанавливаем передний план */
+}
+
+/* Стили для заголовка "Каталог", когда он нажат */
+.catalog-h1.clicked {
+    border-radius: 10px 10px 0px 0px;
+    color: #000000; /* Черный цвет текста */
+    background-color: #ffffff; /* Белый цвет фона */
+}
+
+/* Добавим стиль при наведении на пункты меню */
+.catalog-menu li:hover {
+    background-color: #f5f5f5; /* Изменяем фон при наведении */
+    cursor: pointer; /* Изменяем курсор */
+}
+.AboutСompany-h1{
+    width: 16vh;
+    height: 3vh;
+}
+/* Стили для логотипа */
+.logo-images {
+    margin-right: 10px;
+    width: 20vh;
+    height: 8vh;
+}
+
+.codepen-button {
+    font-family: 'Magistral Bold'; 
+    display: block;
+    cursor: pointer;
+    color: #000; /* Черный текст */
+    margin: 0px;
+    position: relative;
+    text-decoration: none;
+    font-weight: 200;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 3px;
+    isolation: isolate;
+    background-color: #fff !important; /* Белый фон кнопки */
+}
+  
+.codepen-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    background: linear-gradient(115deg,#ff80ee,#ffa6f3,#ffc8f8,#ffffff,#ffc8f8,#ffa6f3,#ff80ee);
+    background-size: 25% 100%;
+    animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+    animation-play-state: paused;
+    translate: 0%;
+    transition: translate 1s ease-out;
+}
+  
+.codepen-button:hover::before {
+    animation-play-state: running;
+    transition-duration: 1s;
+    translate: 0%;
+}
+  
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+    to {
+      transform: translateX(-25%);
+    }
+}
+  
+.codepen-button span {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem; /* Уменьшаем отступы внутри кнопки */
+    font-size: 1rem; /* Уменьшаем размер шрифта */
+    background: #ffffff;
+    border-radius: 3px;
+    height: 100%;
+}
+  
+
+.BtnAboutCompany {
+    border-width: 0px;
+    background-color: transparent; /* Устанавливаем прозрачный фон */
+}
+
+/* Стили для формы */
+.form-head form {
+    background: linear-gradient(to right, #393747, #252426);
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #b5589b;
+    width: 90vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Стили для текстового поля в форме */
+.form-head form input[type="text"] {
+    color: #fff;
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+/* Стили для текста "Учебное оборудование" */
+.equipment {
+    color: #ffffff;
+    margin: 20px 0px 0px 100px;
+    font-size: 10vh;
+    line-height: 1;
+}
+
+.imagesVR {
+    position: absolute;
+    width: 45%;
+    height: auto;
+    top: 100%;
+    right: 0%;
+    transform: translate(0, -50%);
+}
+
+/* Стили для блока текста "ЛЯЛЯЛЯЛЯ" */
+.lala {
+    font-family: 'Magistral Light';
+    margin-top: 3vh;
+    color: #333;
+    margin-left: 8%;
+    font-weight: 100;
+    margin-bottom: 150px;
+    font-size: 4vh;
+}
+
+/**/
+.inf-new h3 {
+    color: #333;
+    text-align: center;
+    margin: 40px 0px 0px 0px;
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* Стили для Swiper */
+.swiper {
+    position: relative;
+    width: 100%;
+    height: 90%;
+}
+
+/* Стили для слайдов Swiper */
+.swiper-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Два столбца для контейнера с информацией и изображениями */
+    gap: 10px; /* Промежуток между столбцами */
+    width: 55% !important;
+    margin-bottom: 4vh;
+    overflow: hidden;
+}
+
+/* Стили для информационного блока в слайде Swiper */
+/* Стили для блока, содержащего информацию */
+.info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding-left: 10px;
+    flex-basis: 40%;
+    border-radius: 50px;
+    overflow: hidden !important;
+    height: 100%; /* Добавлено */
+}
+
+.info-text {
+    width: 90%;
+    padding: 40px 20px 0px 10px;
+    color: #333;
+}
+.info-text h5{
+    font-family: 'Magistral Light';
+    line-height: 1;
+    color: #727272;
+    overflow: hidden;
+    white-space: pre-line;
+    word-wrap: break-word;
+    width: 47%;
+    font-size: 1.2vh;
+}
+.info-text h1{
+    line-height: 1;
+    font-size: 3vh;
+}
+.info-text h4{
+    color: #333;
+    font-size: 2.5vh;
+    margin-left: 7vh;
+    margin-bottom: 5vh;
+}
+.info-text-btn {
+    position: absolute;
+    margin-top: -0.5vh;
+    font-size: 3vh;
+    border: none;
+    width: 5vh;
+    height: 5vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 50px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Стили для изображения в слайде Swiper */
+.slide {
+    float: right;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Изображение будет масштабироваться так, чтобы полностью заполнить контейнер */
+    display: block;
+    margin-top: -48vh;
+}
+
+/*большое изображения внутри блока*/
+.slide img {
+    border-radius: 40px;
+    max-width: 100%; /* Изображение не будет шире своего контейнера */
+    height: auto; /* Изображение будет заполнять высоту блока */
+}
+
+/* Стили для пагинации Swiper */
+.swiper-pagination {
+    position: absolute;
+    left: 10px;
+}
+
+/* Стили для наклейки */
+.img-new {
+    margin-top: -8.5vh;
+    position: absolute;
+    margin-left: 40%;
+    z-index: 1;
+}
+.img-new img{
+    width: 16vh;
+    height: 16vh;
+}
+/* Mаленькие изображения*/
+.slider-inf-img {
+    margin-top: 10px;
+    max-width: 40%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 40%;
+    margin-bottom: 30px;
+}
+
+.slide-inf1 img,
+.slide-inf2 img,
+.slide-inf3 img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.slide-inf2 img{
+    margin-left: 5px;
+}
+.slide-inf3 img{
+    margin-left: 10px;
+}
+
+.aboutUs {
+    padding-top: 150px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Первая колонка для надписи, вторая - для описания */
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.aboutUs-header {
+    display: grid; /* Используем grid-контейнер */
+    grid-template-columns: auto auto; /* Два столбца для надписи и изображения */
+    align-items: center; /* Выравниваем элементы по центру */
+    grid-column: 1; /* От первой до последней колонки */
+}
+
+.aboutUs h2 {
+    margin-left: 50px;
+    margin-right: 70px;
+    font-size: 150px;
+    color: #333;
+}
+
+.imgVr {
+    align-items: left;
+    position: absolute;
+    opacity: 0.15;
+}
+
+.imgVr img {
+    margin-top: -100%;
+    width: 160%; /* Увеличиваем ширину изображения до 200 пикселей */
+    height: auto; /* Автоматически подстраиваем высоту для сохранения пропорций */
+}
+
+.about-us-inf {
+    font-family: 'Magistral Light';
+    text-align: justify;
+    padding-right: 70px;
+}
+
+.about-us-inf h4 {
+    color: #333;
+    font-size: 24px;
+}
+
+.inf {
+    position: relative;
+}
+
+.dop-inf {
+    color: #333;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Промежуток между столбцами */
+}
+
+.dop-inf div {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.dop-inf div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -10px; /* Положение линии между столбцами */
+    width: 3px; /* Ширина линии */
+    background-color: #858585; /* Цвет линии */
+}
+
+.pink-inf {
+    color: #b55bb8;
+}
+
+.dop-inf div h1 {
+    font-size: 64px; /* Увеличиваем размер заголовка h1 */
+}
+
+.dop-inf div h3 {
+    font-size: 32px; /* Увеличиваем размер подзаголовка h3 */
+}
+
+.feedback {
+    margin-top: 5%;
+    padding-top: 5%;
+    display: flex;
+    backdrop-filter: blur(20px); /* Увеличиваем значение размытия */
+    justify-content: space-between;
+    border-radius: 10px; /* добавляем скругление краев */
+    background-color: rgba(209, 209, 209, 0.2); /* Прозрачный серый цвет с бОльшей прозрачностью */
+    position: relative; /* Для размытого фона внутри блока */
+}
+
+.feedback-left {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.feedback-inf,
+.feedback-dop-inf {
+    font-family: 'Magistral Light';
+    margin-left: 15%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.feedback h1 {
+    margin-bottom: 10px;
+}
+
+.feedback h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.forma-feedback {
+    margin-top: -2%;
+    margin-right: 5%;
+    width: 550px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px; /* добавляем скругление краев */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.forma-feedback h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.forma-feedback h4 {
+    margin-left: 0px;
+    font-family: 'Magistral Light';
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.feedback-inf h1,
+.forma-feedback h2 {
+    color: #333;
+    font-size: 32px;
+}
+
+.feedback-inf h3,
+.feedback-dop-inf h3 {
+    color: #333;
+    font-size: 12px;
+}
+
+.feedback-dop-inf h1{
+    color: #333;
+    font-size: 18px;
+}
+
+/* Закругления градиента */
+.form-btn-img {
+    width: 37%;
+    height: 22%;
+    overflow: hidden;
+    display: flex;
+    margin-left: 27%;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+/* Стили для кнопки в форме */
+.form-btn {
+    font-family: 'Magistral Bold';
+    background-color: #ffffff;
+    color: #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Делаем кнопку блочным элементом */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px; /* Устанавливаем радиус для всех углов кнопки */
+    border: 5px solid transparent;
+    border-image: linear-gradient(to top right, #96029b, #ffffff) 1;
+}
+
+/* Стили для формы обратной связи */
+.feedback-form {
+    background-color: #ffffff; /* Задний фон блока формы */
+    padding: 20px;
+    border-radius: 30px;
+    max-width: 600px; /* Максимальная ширина блока */
+    margin: 0 auto; /* Центрирование блока */
+}
+
+/* Стили для input */
+.feedback-form input {
+    width: 100%; /* Ширина input равна ширине его контейнера */
+    border-radius: 5px; /* Закругление углов */
+    background-color: #ffffff; /* Белый фон input */
+    box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+}
+
+.form-group {
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+input[type="fio"],
+input[type="tel"],
+input[type="name"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+input[placeholder="ФИО*"],
+input[placeholder="Телефон*"],
+input[placeholder="Наименование разработки"] {
+    color:#333;
+}
+.ball1 {
+    margin-top: -10%;
+    margin-left: 50%;
+}
+.ball2 img{
+    position: absolute;
+    margin-top: -10%;
+    margin-left: -18%;
+    width: 14%; 
+    height: auto; 
+}
+.ball3 img{
+    margin-top: -5%;
+    margin-left: 28%;
+    position: absolute;
+    width: 7%; 
+    height: auto; 
+}
+
+/* Стили для слайдов Swiper */
+.swiper-slide2 {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Установка строк для изображения и текста */
+    align-items: start; /* Выравнивание по верхнему краю */
+}
+
+/* Стили для информационного блока в слайде Swiper */
+.info2 {
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* тень вокруг всего блока */
+    color: #333;
+    border-radius: 20px;
+}
+
+/* Стили для изображения в слайде Swiper */
+.slide2 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0; /* Закругление верхних углов только для изображения */
+}
+
+/* Стили для текста в слайде Swiper */
+.info-text2 {
+    position: relative; /* Добавляем относительное позиционирование */
+    margin-top: -5px;
+    background-color: #34314b;
+    padding: 20px;
+    color: #ffffff;
+    border-radius: 0 0 20px 20px; /* Закругление нижних углов только для текста */
+}
+.info-text2 h4{
+    margin-left: -1px;
+    color:#c2c2c2;
+    padding-bottom: 5px;
+}
+.info-text2 h2{
+    font-size: 21px;
+}
+.info-text2-btn {
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    margin-top: -25px; /* Поднимаем кнопку на 10px */
+    margin-left: 250px; /* Устанавливаем горизонтальное положение кнопки */
+    font-size: 24px;
+    border-width: 0px;
+    width: 40px;
+    height: 40px;
+    max-width: 50px;
+    border-radius: 50%;
+    z-index: 1; /* Устанавливаем порядок слоев */
+}
+
+.swiper-pagination2 {
+    margin-left: 46%;
+    left: 10px;
+    margin-top: 2vh;
+}
+
+.footer{
+    margin-top: 7vh;
+    width: 100%;
+    height: 230px;
+    background: linear-gradient(to right, #393747, #252426);
+}
+.logo-images1{
+    padding: 20px;
+    max-width: 130px;
+}
+.logo-footer h5{
+    margin-top: -20px;
+    margin-left: 20px;
+    font-size: 9px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer h3,h4{
+    color: #fff;
+    margin-left: 20px;
+}
+.img-footer {
+    margin-top: 5px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 0fr)); /* автоматически подстраивает количество колонок */
+    gap: 1px; /* промежуток между изображениями */
+}
+.newsletter{
+    margin-top: -20vh;
+    margin-left: 50vh;
+    background-color: #222;
+    width: 70%;
+    height: 15vh;
+    border-radius: 10px;
+}
+.newsletter h2{
+    padding: 20px 0px 0px 20px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.newsletter h4{
+    font-family: 'Magistral Light';
+    font-size: 14px;
+}
+
+/* Стили для формы */
+.footer-input-email {
+    position: relative; /* Добавлено для позиционирования псевдоэлемента */
+    background: #222;
+    border-radius: 10px;
+    width: 50vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: -8vh;
+    margin-left: 50vh;
+}
+
+/* Стили для текстового поля в форме */
+.footer-input-email input[type="text"] {
+    color: #fff;
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+/* Белая линия снизу блока input */
+.footer-input-email::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.footer-btn-img1 {
+    width: 20vh;
+    height: 6vh;
+    margin-top: -5vh;
+    margin-left: 80%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+/* Стили для кнопки в заголовке */
+.footer-btn {
+    font-family: 'Magistral Bold';
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to top right, #b5589b, #ffffff) 1;
+}
